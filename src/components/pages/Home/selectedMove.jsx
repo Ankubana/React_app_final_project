@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import { Link,useNavigate} from "react-router-dom";
 import MovieDesc from "./Movie_description";
 import axios from "axios";
-
  const SelectMovie=({selectMovie,inputval})=>{
      const [movieId,setMovieId]=useState("")
      const [data,setData]=useState()
       const Navigate = useNavigate();
-
-     async  function movie_Description(value){
+   const filteredMovies = selectMovie?.Search?.filter(
+    (movie) => movie?.Poster && movie.Poster !==""
+  ) || [];
+     console.log(filteredMovies)
+   async  function movie_Description(value){
      const MovieId=value
 
      const{data}=await axios.get(`https://omdbapi.com/?apikey=4cfe7eb4&s=${value}`)
@@ -21,9 +23,11 @@ import axios from "axios";
     
 return(
 <>
-
+      
      {
-      selectMovie?.Search?.slice(0,6).map((movie)=>(
+
+  
+      filteredMovies?.slice(0,6).map((movie)=>(
          <> <div>
             <div className="movie_card">
   <img 
