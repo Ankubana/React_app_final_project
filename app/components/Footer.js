@@ -1,0 +1,74 @@
+import  footer_styles from "../components/footer.module.css"
+export  default function(){
+
+    return(
+
+ <section id="footer">
+    <div className={footer_styles.container}>
+        <div  className={footer_styles.row}>
+        <div  className={footer_styles.footer__top__wrapper}>
+        <div  className={footer_styles.footer__block}>
+        <div  className={footer_styles.footer__link__title}>Actions</div>
+        <div>
+        <div className={footer_styles.footer__link__wrapper}>
+            <a className={footer_styles.footer__link}>Summarist Magazine</a> </div>
+        <div className={footer_styles.footer__link__wrapper}>
+            <a className={footer_styles.footer__link}>Cancel Subscription</a>
+         </div>
+        <div className={footer_styles.footer__link__wrapper}>
+        <a className={footer_styles.footer__link}>Help</a>
+        </div>
+        <div className={footer_styles.footer__link__wrapper}>
+        <a className={footer_styles.footer__link}>Contact us</a></div>
+        </div>
+        </div>
+        <div className={footer_styles.footer__block}>
+        <div className={footer_styles.footer__link__title}>Useful Links</div>
+        <div>
+         <div className={footer_styles.footer__link__wrapper}>
+            <a className={footer_styles.footer__link}>Pricing</a>
+        </div>
+        <div className={footer_styles.footer__link__wrapper}>
+            <a className={footer_styles.footer__link}>Summarist Business</a>
+        </div>
+        <div className={footer_styles.footer__link__wrapper}>
+            <a className={footer_styles.footer__link}>Gift Cards</a>
+        </div>
+        <div className={footer_styles.footer__link__wrapper}>
+            <a className={footer_styles.footer__link}>Authors &amp; Publishers</a>
+        </div>
+        </div></div>
+        <div className={footer_styles.footer__block}>
+         <div className={footer_styles.footer__link__title}>Company</div>
+        <div>
+            <div className={footer_styles.footer__link__wrapper}>
+        <a className={footer_styles.footer__link}>About</a>
+        </div>
+        <div className={footer_styles.footer__link__wrapper}>
+        <a className={footer_styles.footer__link}>Careers</a>
+        
+        </div><div className={footer_styles.footer__link__wrapper}>
+                 
+      <a className={footer_styles.footer__link}>Partners</a>
+      </div><div className={footer_styles.footer__link__wrapper}>
+        <a className={footer_styles.footer__link}>Code of Conduct</a>
+        </div></div></div><div className={footer_styles.footer__block}>
+            <div className={footer_styles.footer__link__title}>Other</div>
+            <div><div className={footer_styles.footer__link__wrapper}>
+                <a className={footer_styles.footer__link}>Sitemap</a></div>
+                <div className={footer_styles.footer__link__wrapper}>
+                  <a className={footer_styles.footer__link}>Legal Notice</a></div>
+                  <div className={footer_styles.footer__link__wrapper}>
+                  <a className={footer_styles.footer__link}>Terms of Service</a></div>
+                   <div className={footer_styles.footer__link__wrapper}>
+                   <a className={footer_styles.footer__link}>Privacy Policies</a>
+                   </div></div></div></div>
+                   <div className={footer_styles.footer__copyright__wrapper}>
+                    <div className={footer_styles.footer__copyright}>Copyright © 2023 Summarist.
+            </div></div></div></div></section>
+
+
+
+
+    )
+}

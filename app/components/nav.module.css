@@ -1,0 +1,44 @@
+.nav{
+ height:80px;
+ 
+}
+.nav__wrapper{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  max-width:1070px;
+  width:100%;
+  height:100%;
+  margin: auto;
+  padding:24px;
+  
+}
+.nav__img__mask{
+max-width:200px;
+font-size:30px;
+}
+.nav__img{
+  width:100%;
+  height:50px;
+  
+}
+.nav__list__wrapper{
+  display:flex;
+  gap:20px;
+   list-style-type:none;
+}
+
+.nav__list{
+color:#032b41;
+ cursor:not-allowed;
+}
+
+.nav__list__login{
+  cursor: pointer;
+}
+
+.nav__list__login:hover{
+  color: aqua;
+}
+
+ 
