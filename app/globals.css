@@ -4,3 +4,22 @@
     box-sizing: border-box;
     font-family: Roboto, sans-serif;
 }
+.button{
+  outline:none;
+  border:none;
+  cursor:pointer;
+}
+.auth__separator:after, .auth__separator:before {
+    content: "";
+    display: block;
+    flex-grow: 1;
+    height: 1px;
+    background: #bac8ce;
+}
+.auth__separator:after, .auth__separator:before {
+    content: "";
+    display: block;
+    flex-grow: 1;
+    height: 1px;
+    background: #bac8ce;
+}

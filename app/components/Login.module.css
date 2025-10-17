@@ -30,26 +30,25 @@ ease 0s;
 }
 
 .btn {
-    background-color: #2bd97c;
-    color: #032b41;
-    width: 100%;
-    height: 40px;
-    border-radius: 4px;
-    font-size: 16px;
-    transition: background-color .2s;
-    display: flex
-;
-    align-items: center;
-    justify-content: center;
-    min-width: 180px;
+    background-color:#2bd97c;
+    color:#032b41;
+    width:100%;
+    height:40px;
+    border-radius:4px;
+    font-size:16px;
+    transition:background-color .2s;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-width:180px;
+    border:none;
 }
 .btn.guest__btn__wrapper {
-    position: relative;
-    display: flex
-;
-    background-color: #3a579d;
+    position:relative;
+    display:flex;
+    background-color:#3a579d;
     color: #fff;
-    justify-content: center;
+    justify-content:center;
 }
 .guest__icon--mask {
     background-color: transparent;
@@ -57,8 +56,8 @@ ease 0s;
 .google__icon--mask {
     display: flex
 ;
-    align-items: center;
-    justify-content: center;
+    align-items:center;
+    justify-content:center;
     width: 36px;
     height: 36px;
     border-radius: 4px;
@@ -81,8 +80,7 @@ ease 0s;
     justify-content: center;
 }
 .auth__separator {
-    display: flex
-;
+    display: flex;
     align-items: center;
     margin: 16px 0;
 }
@@ -191,14 +189,32 @@ ease 0s;
     font-weight: 300;
     font-size: 16px;
     outline:none;
+   
 }
-
+.auth__separator:after, .auth__separator:before {
+    content: "";
+    display: block;
+    flex-grow: 1;
+    height: 1px;
+    background: #bac8ce;
+}
 .auth__close__btn {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    display: flex
-;
-    cursor: pointer;
-    transition: opacity .2s;
+    position:absolute;
+    top:12px;
+    right:12px;
+    display:flex;
+    cursor:pointer;
+    transition:opacity .2s;
+    outline:none;
+}
+.auth__switch__btn {
+    height:40px;
+    text-align: center;
+    background-color: #f1f6f4;
+    color: #116be9;
+    width: 100%;
+    border-radius: 0 0 4px 4px;
+    font-weight: 300;
+    font-size: 16px;
+    border:none;
 }

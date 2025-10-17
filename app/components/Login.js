@@ -6,12 +6,10 @@ export default function Login() {
     <div id="__next">
       <div className={`${login_styles.wrapper} ${login_styles.wrapper__full}`}>
         <div className={`${login_styles.sidebar__overlay} ${login_styles.sidebar__overlay__hidden}`}></div>
-
         <div className={login_styles.auth__wrapper}>
           <div className={login_styles.auth}>
             <div className={login_styles.auth__content}>
               <div className={login_styles.auth__title}>Log in to Summarist</div>
-
               {/* Guest Login Button */}
               <button className={`${login_styles.btn} ${login_styles.guest__btn__wrapper}`}>
                 <figure className={`${login_styles.google__icon__mask} ${login_styles.guest__icon__mask}`}>
@@ -19,23 +17,19 @@ export default function Login() {
                 </figure>
                 <div>Login as a Guest</div>
               </button>
-
               <div className={login_styles.auth__separator}>
                 <span className={login_styles.auth__separator__text}>or</span>
               </div>
-
               {/* Google Login Button */}
               <button className={`${login_styles.btn} ${login_styles.google__btn__wrapper}`}>
                 <figure className={login_styles.google__icon__mask}>
-                  <FaGoogle className={login_styles.google__icon__mask} />
+                  <img src="googleLogo.jpg" className={login_styles.google__icon__mask} />
                 </figure>
                 <div>Login with Google</div>
               </button>
-
               <div className={login_styles.auth__separator}>
                 <span className={login_styles.auth__separator__text}>or</span>
               </div>
-
               {/* Main Login Form */}
               <form className={login_styles.auth__main__form}>
                 <input
@@ -52,8 +46,7 @@ export default function Login() {
                   <span>Login</span>
                 </button>
               </form>
-            </div>
-
+               </div>
             <div className={login_styles.auth__forgot__password}>
               Forgot your password?
             </div>
