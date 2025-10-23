@@ -9,18 +9,12 @@ import Review from "./components/Review"
 import Footer from "./components/Footer"
 import Summarist from"./components/summarist"
 import Login from "./components/Login"
-
+import For_You from "./components/For_you"
+import For_you from "./components/For_you";
 export default function Home() {
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-     <Landing/>
-     <Login/>
-      <Features/>
-      <Statistics/>
-      <Statistics_cont/>
-      <Review/>
-      <Summarist/>
-      <Footer/>
+     <For_you />
     </div>
   );
 }
