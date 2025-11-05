@@ -4,7 +4,9 @@ import {   FaLightbulb, FaBook, FaPlay } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
 import { FaRegClock } from "react-icons/fa";
 import { FaMicrophone } from "react-icons/fa";
+import { AiOutlinePoweroff } from "react-icons/ai";
 import { BsBookmark } from "react-icons/bs";
+import { BulbOutlined } from "@ant-design/icons";
 import { HiOutlineLightBulb } from "react-icons/hi2"; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookOpen } from '@fortawesome/free-solid-svg-icons';
@@ -38,7 +40,7 @@ export default function BookDetails() {
                 </div>
 
                 <div className={style_BookDetails.inner__book__description}>
-                  <FaMicrophone   className={style_BookDetails.inner__book__icon}/>
+                  < FaMicrophone   className={style_BookDetails.inner__book__icon}/>
                   <div className={style_BookDetails.inner__book__type}>Audio & Text</div>
                 </div>
 
@@ -64,7 +66,7 @@ export default function BookDetails() {
               <Link href="/listen/the-lean-startup">
                 <button className={style_BookDetails.inner__book__read__btn}>
                   <div className={style_BookDetails.inner__book__read__icon}>
-                    <FaPlay />
+                    <FaMicrophone className={style_BookDetails.bulbLifght}/>
                   </div>
                   <div className={style_BookDetails.inner__book__read__text}>Listen</div>
                 </button>
