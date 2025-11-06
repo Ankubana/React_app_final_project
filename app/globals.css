@@ -4,6 +4,11 @@
     box-sizing: border-box;
     font-family: Roboto, sans-serif;
 }
+body {
+    max-width:100%;
+    overflow-x: hidden;
+    scroll-behavior:smooth;
+} 
 .button{
   outline:none;
   border:none;
