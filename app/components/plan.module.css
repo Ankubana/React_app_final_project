@@ -79,6 +79,14 @@ ease 0s;
     border-bottom-right-radius: 16rem;
     border-bottom-left-radius: 16rem;
 }
+
+.plan__card__dot__active {
+ position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: #000;
+    border-radius: 50%;
+}
 .plan {
     width: 100%;
 }
@@ -108,11 +116,22 @@ ease 0s;
     font-weight: 700;
 }
 .plan__card__active {
-    border: 4px solid #2be080;
+    border:4px solid #2be080;
+}
+.faq__wrapper {
+  display: flex;
+  flex-direction: column; /* keep FAQ items stacked vertically */
+  align-items: center;    /* center horizontally */
+  justify-content: center; /* optional: center vertically if needed */
+  width: 100%;            /* or set a max-width to limit the content width */
+  max-width: 800px;       /* optional, adjust as needed */
+  margin: 0 auto;         /* center in parent */
+  padding: 2rem 1rem;     /* optional spacing */
+  box-sizing: border-box;
+  z-index: 1;
 }
 .plan__card {
-    display: flex
-;
+    display:flex;
     gap: 24px;
     padding: 24px;
     background-color: #f1f6f4;
@@ -121,6 +140,9 @@ ease 0s;
     cursor: pointer;
     max-width: 680px;
     margin: 0 auto;
+}
+.plan__card.plan__card__active{
+border:4px solid #2be080;
 }
 .plan__features__wrapper {
     display: grid
@@ -133,10 +155,78 @@ ease 0s;
     max-width: 800px;
     margin: 0 auto 56px;
 }
+.plan__disclaimer {
+    font-size: 12px;
+    color: #6b757b;
+    text-align: center;
+    padding:14px 0;
+}
 .seedling_img{
        size:60;
-
-
+}
+.accordion__title {
+    font-weight: 500;
+    font-size: 24px;
+    position: relative;
+    margin-bottom: 0;
+    color: #032b41;
+    transition: .3s;
+}
+.plan__card__cta {
+    background: #fff;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
+    padding: 32px 0;
+    display: flex
+;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+.btn {
+    background-color: #2bd97c;
+    color: #032b41;
+    width:100px;
+    height: 40px;
+    border:none;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color .2s;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+    min-width:300px;
+    
+}
+.accordion__card {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+.accordion__header {
+    display: flex
+;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 24px 0;
+    gap: 8px;
+}
+.collapse {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: height .35s 
+ease;
+}
+.accordion__body {
+    min-height: 1px;
+    padding-bottom: 24px;
+    color: #394547;
+    line-height: 1.5;
 }
 .plan__card__separator:after, 
 .plan__card__separator:before {
@@ -213,9 +303,6 @@ ease 0s;
     text-align: center;
     margin-bottom: 32px;
     font-weight: 700;
-}
-.plan__card__active {
-    border: 4px solid #2be080;
 }
 
 .plan__card {

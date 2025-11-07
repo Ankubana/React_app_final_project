@@ -1,28 +1,62 @@
 "use client";
 
-import { AiFillFileText, AiOutlineDown } from "react-icons/ai";
-import { FaUsers } from "react-icons/fa";
-import { BsStars } from "react-icons/bs";
-import { FaSeedling } from "react-icons/fa";
+import { useState } from "react";
+import { AiFillFileText } from "react-icons/ai";
+import { FaHandshake } from "react-icons/fa";
+import { BsChevronDown } from "react-icons/bs";
 import Plan_styles from "../components/plan.module.css";
-import { FaHandshake } from 'react-icons/fa';
-
-function PlantIcon() {
-  return <GiPlantPot size={40} color="#1E3A8A" />;
-}
-
 
 export default function PlanFeatures() {
+  // State for active plan
+  const [activePlan, setActivePlan] = useState("yearly");
+  // State for open FAQ
+  const [openIndex, setOpenIndex] = useState(null);
+
+  // Toggle FAQ open/close
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  // Handle plan click
+  const handlePlanClick = (selectedPlan) => {
+    setActivePlan(selectedPlan);
+  };
+
+  // FAQ data
+  const faqs = [
+    {
+      question: "How does the free 7-day trial work?",
+      answer:
+        "Begin your complimentary 7-day trial with a Summarist annual membership. You are under no obligation to continue your subscription, and you will only be billed when the trial period expires. With Premium access, you can learn at your own pace and as frequently as you desire, and you may terminate your subscription prior to the conclusion of the 7-day free trial.",
+    },
+    {
+      question:
+        "Can I switch subscriptions from monthly to yearly, or yearly to monthly?",
+      answer:
+        "While an annual plan is active, it is not feasible to switch to a monthly plan. However, once the current month ends, transitioning from a monthly plan to an annual plan is an option.",
+    },
+    {
+      question: "What's included in the Premium plan?",
+      answer:
+        "Premium membership provides you with the ultimate Summarist experience, including unrestricted entry to many best-selling books, high-quality audio, the ability to download titles for offline reading, and the option to send your reads to your Kindle.",
+    },
+    {
+      question: "Can I cancel during my trial or subscription?",
+      answer:
+        "You will not be charged if you cancel your trial before its conclusion. While you will not have complete access to the entire Summarist library, you can still expand your knowledge with one curated book per day.",
+    },
+  ];
+
   return (
     <div className={`${Plan_styles.wrapper} ${Plan_styles.wrapper__full}`}>
-      {/* Sidebar overlay (optional hidden background) */}
+      {/* Sidebar overlay */}
       <div
         className={`${Plan_styles.sidebar__overlay} ${Plan_styles.sidebar__overlay__hidden}`}
       ></div>
 
       {/* Plan Section */}
       <div className={Plan_styles.plan}>
-        {/* Header Section */}
+        {/* Header */}
         <div className={Plan_styles.plan__header__wrapper}>
           <div className={Plan_styles.plan__header}>
             <div className={Plan_styles.plan__title}>
@@ -43,32 +77,26 @@ export default function PlanFeatures() {
           </div>
         </div>
 
-        {/* Features Section */}
+        {/* Features */}
         <div className={Plan_styles.plan__features__wrapper}>
-          {/* Feature 1 */}
           <div className={Plan_styles.plan__features}>
             <figure className={Plan_styles.plan__features__icon}>
               <AiFillFileText size={60} color="currentColor" />
             </figure>
             <div className={Plan_styles.plan__features__text}>
-              <b>Key ideas in few min</b> with many books to read
+              <b>Key ideas in few minutes</b> with many books to read
             </div>
           </div>
-           
-          {/* Feature 2 */}
+
           <div className={Plan_styles.plan__features}>
             <figure className={Plan_styles.plan__features__icon}>
-              
-                < img src= "seedling.png" className={Plan_styles.seedling_img}/>
-                
-               
+              <img src="seedling.png" alt="growth" />
             </figure>
             <div className={Plan_styles.plan__features__text}>
               <b>3 million</b> people growing with Summarist everyday
             </div>
           </div>
 
-          {/* Feature 3 */}
           <div className={Plan_styles.plan__features}>
             <figure className={Plan_styles.plan__features__icon}>
               <FaHandshake size={60} color="currentColor" />
@@ -79,52 +107,111 @@ export default function PlanFeatures() {
           </div>
         </div>
 
-        {/* FAQ Section */}
-        <div className={Plan_styles.section__title}>Choose the plan that fits you</div>
-        <div className={`${Plan_styles.plan__card} ${Plan_styles.plan__card__active}`}>
-           <div className={Plan_styles.plan__card__circle}>
-            <div className={Plan_styles.plan__card__dot}>
+        {/* Plans */}
+        <div className={Plan_styles.section__title}>
+          Choose the plan that fits you
+        </div>
+
+        {/* Yearly Plan */}
+        <div
+          className={`${Plan_styles.plan__card} ${
+            activePlan === "yearly" ? Plan_styles.plan__card__active : ""
+          }`}
+          onClick={() => handlePlanClick("yearly")}
+        >
+          <div className={Plan_styles.plan__card__circle}>
+            <div
+              className={`${Plan_styles.plan__card__dot} ${
+                activePlan === "yearly" ? Plan_styles.plan__card__dot__active : ""
+              }`}
+            ></div>
+          </div>
+          <div className={Plan_styles.plan__card__content}>
+            <div className={Plan_styles.plan__card__title}>
+              Premium Plus Yearly
             </div>
-            </div><div className={Plan_styles.plan__card__content}>
-                <div className={Plan_styles.plan__card__title}>Premium Plus Yearly</div>
-                <div className={Plan_styles.plan__card__price}>$99.99/year</div>
-                <div className={Plan_styles.plan__card__text}>7-day free trial included</div>
-           </div></div>
-           <div className={Plan_styles.plan__card__separator}>
-            
-            <div className={Plan_styles.plan__separator}>or</div></div>
-           <div className={`${Plan_styles.plan__card} ${Plan_styles.plan__card__active}`}>
-           <div className={Plan_styles.plan__card__circle}>
-            <div className={Plan_styles.plan__card__dot}>
-            </div>
-            </div><div className={Plan_styles.plan__card__content}>
-                <div className={Plan_styles.plan__card__title}>Premium Plus Monthly</div>
-                <div className={Plan_styles.plan__card__price}>$99.99/year</div>
-                <div className={Plan_styles.plan__card__text}>no trial included</div>
-           </div></div>
-           <div className={Plan_styles.plan__card__cta}>
-            <span className={Plan_styles.btn__wrapper}>
-            <button className={Plan_styles.btn}>
-            <span>Start your first month</span>
-            </button>
-           </span>
-           <div className={Plan_styles.plan__disclaimer}>30-day money back guarantee, no questions asked.
-           </div>
-           </div>
-        <div className={Plan_styles.faq__wrapper}>
-          <div className={Plan_styles.accordion__card}>
-            <div className={Plan_styles.accordion__header}>
-              <div className={Plan_styles.accordion__title}>
-                How does the free 7-day trial work?
-              </div>
-              <AiOutlineDown className={Plan_styles.accordion__icon} />
-            </div>
-            <div className={Plan_styles.accordion__body}>
-              Begin your complimentary 7-day trial with a Summarist annual
-              membership. You are under no obligation to continue, and you will
-              only be billed when the trial period expires.
+            <div className={Plan_styles.plan__card__price}>$99.99/year</div>
+            <div className={Plan_styles.plan__card__text}>
+              7-day free trial included
             </div>
           </div>
+        </div>
+
+        {/* Separator */}
+        <div className={Plan_styles.plan__card__separator}>
+          <div className={Plan_styles.plan__separator}>or</div>
+        </div>
+
+        {/* Monthly Plan */}
+        <div
+          className={`${Plan_styles.plan__card} ${
+            activePlan === "monthly" ? Plan_styles.plan__card__active : ""
+          }`}
+          onClick={() => handlePlanClick("monthly")}
+        >
+          <div className={Plan_styles.plan__card__circle}>
+            <div
+              className={`${Plan_styles.plan__card__dot} ${
+                activePlan === "monthly"
+                  ? Plan_styles.plan__card__dot__active
+                  : ""
+              }`}
+            ></div>
+          </div>
+          <div className={Plan_styles.plan__card__content}>
+            <div className={Plan_styles.plan__card__title}>
+              Premium Plus Monthly
+            </div>
+            <div className={Plan_styles.plan__card__price}>$9.99/month</div>
+            <div className={Plan_styles.plan__card__text}>
+              No trial included
+            </div>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className={Plan_styles.plan__card__cta}>
+          <div className={Plan_styles.btn__wrapper}>
+            <button className={Plan_styles.btn}>
+              <span>
+                {activePlan === "yearly"
+                  ? "Start your free 7-day trial"
+                  : "Start your first month"}
+              </span>
+            </button>
+            <div className={Plan_styles.plan__disclaimer}>
+              {activePlan === "yearly"
+                ? "Cancel your trial anytime before it ends, and you won’t be charged."
+                : "30-day money-back guarantee, no questions asked."}
+            </div>
+          
+        
+        {/* FAQ Accordion */}
+        <div className={Plan_styles.faq__wrapper}>
+          {faqs.map((faq, index) => (
+            <div key={index} className={Plan_styles.accordion__card}>
+              <div
+                className={Plan_styles.accordion__header}
+                onClick={() => toggleFAQ(index)}
+              >
+                <div className={Plan_styles.accordion__title}>
+                  {faq.question}
+                </div>
+                <BsChevronDown
+                  className={`${Plan_styles.accordion__icon} ${
+                    openIndex === index ? Plan_styles.open : ""
+                  }`}
+                  size={20}
+                />
+              </div>
+              {openIndex === index && (
+                <div className={Plan_styles.accordion__body}>{faq.answer}</div>
+              )}
+            </div>
+            
+          ))}
+          </div>
+        </div>
         </div>
       </div>
     </div>
