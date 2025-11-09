@@ -7,27 +7,22 @@ import { BsChevronDown } from "react-icons/bs";
 import Plan_styles from "../components/plan.module.css";
 
 export default function PlanFeatures() {
-  // State for active plan
   const [activePlan, setActivePlan] = useState("yearly");
-  // State for open FAQ
   const [openIndex, setOpenIndex] = useState(null);
 
-  // Toggle FAQ open/close
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  // Handle plan click
   const handlePlanClick = (selectedPlan) => {
     setActivePlan(selectedPlan);
   };
 
-  // FAQ data
   const faqs = [
     {
       question: "How does the free 7-day trial work?",
       answer:
-        "Begin your complimentary 7-day trial with a Summarist annual membership. You are under no obligation to continue your subscription, and you will only be billed when the trial period expires. With Premium access, you can learn at your own pace and as frequently as you desire, and you may terminate your subscription prior to the conclusion of the 7-day free trial.",
+        "Begin your complimentary 7-day trial with a Summarist annual membership. You are under no obligation to continue your subscription, and you will only be billed when the trial period expires.",
     },
     {
       question:
@@ -38,25 +33,22 @@ export default function PlanFeatures() {
     {
       question: "What's included in the Premium plan?",
       answer:
-        "Premium membership provides you with the ultimate Summarist experience, including unrestricted entry to many best-selling books, high-quality audio, the ability to download titles for offline reading, and the option to send your reads to your Kindle.",
+        "Premium membership provides unrestricted access to best-selling books, high-quality audio, offline downloads, and the option to send reads to your Kindle.",
     },
     {
       question: "Can I cancel during my trial or subscription?",
       answer:
-        "You will not be charged if you cancel your trial before its conclusion. While you will not have complete access to the entire Summarist library, you can still expand your knowledge with one curated book per day.",
+        "You will not be charged if you cancel your trial before its conclusion. You can still read one curated book per day after cancelling.",
     },
   ];
 
   return (
     <div className={`${Plan_styles.wrapper} ${Plan_styles.wrapper__full}`}>
-      {/* Sidebar overlay */}
       <div
         className={`${Plan_styles.sidebar__overlay} ${Plan_styles.sidebar__overlay__hidden}`}
       ></div>
 
-      {/* Plan Section */}
       <div className={Plan_styles.plan}>
-        {/* Header */}
         <div className={Plan_styles.plan__header__wrapper}>
           <div className={Plan_styles.plan__header}>
             <div className={Plan_styles.plan__title}>
@@ -112,7 +104,6 @@ export default function PlanFeatures() {
           Choose the plan that fits you
         </div>
 
-        {/* Yearly Plan */}
         <div
           className={`${Plan_styles.plan__card} ${
             activePlan === "yearly" ? Plan_styles.plan__card__active : ""
@@ -137,12 +128,10 @@ export default function PlanFeatures() {
           </div>
         </div>
 
-        {/* Separator */}
         <div className={Plan_styles.plan__card__separator}>
           <div className={Plan_styles.plan__separator}>or</div>
         </div>
 
-        {/* Monthly Plan */}
         <div
           className={`${Plan_styles.plan__card} ${
             activePlan === "monthly" ? Plan_styles.plan__card__active : ""
@@ -169,7 +158,6 @@ export default function PlanFeatures() {
           </div>
         </div>
 
-        {/* CTA */}
         <div className={Plan_styles.plan__card__cta}>
           <div className={Plan_styles.btn__wrapper}>
             <button className={Plan_styles.btn}>
@@ -181,11 +169,12 @@ export default function PlanFeatures() {
             </button>
             <div className={Plan_styles.plan__disclaimer}>
               {activePlan === "yearly"
-                ? "Cancel your trial anytime before it ends, and you won’t be charged."
-                : "30-day money-back guarantee, no questions asked."}
+                ? "Cancel anytime before the trial ends."
+                : "30-day money-back guarantee."}
             </div>
-          
-        
+          </div>
+        </div>
+
         {/* FAQ Accordion */}
         <div className={Plan_styles.faq__wrapper}>
           {faqs.map((faq, index) => (
@@ -201,17 +190,14 @@ export default function PlanFeatures() {
                   className={`${Plan_styles.accordion__icon} ${
                     openIndex === index ? Plan_styles.open : ""
                   }`}
-                  size={20}
+                  size={24}
                 />
               </div>
               {openIndex === index && (
                 <div className={Plan_styles.accordion__body}>{faq.answer}</div>
               )}
             </div>
-            
           ))}
-          </div>
-        </div>
         </div>
       </div>
     </div>
