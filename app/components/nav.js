@@ -1,6 +1,7 @@
-
 // Nav.jsx
+import Link from "next/link";
 import styles from './nav.module.css';
+
 export default function Nav() {
   return (
     <nav className={styles.nav}>
@@ -13,11 +14,21 @@ export default function Nav() {
           />
         </figure>
 
-        <ul className={styles.nav__list__wrapper }>
-          <li className={`${styles.nav__list} ${styles.nav__list__login}`}>Login</li>
-          <li className={styles.nav__list }>About</li>
-          <li className={styles.nav__list}>Contact</li>
-          <li className={styles.nav__list}>Help</li>
+        <ul className={styles.nav__list__wrapper}>
+          <li className={styles.nav__list}>
+            <Link href="/login" className={styles.nav__list__login}>
+              Login
+            </Link>
+          </li>
+          <li className={styles.nav__list}>
+            <Link href="/about">About</Link>
+          </li>
+          <li className={styles.nav__list}>
+            <Link href="/contact">Contact</Link>
+          </li>
+          <li className={styles.nav__list}>
+            <Link href="/help">Help</Link>
+          </li>
         </ul>
       </div>
     </nav>

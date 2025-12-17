@@ -1,6 +1,6 @@
 import { FaUser } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa"; // ✅ Google icon
-import login_styles from "../components/Login.module.css"
+import login_styles from "./Login.module.css"
 export default function Login() {
   return (
     <div id="__next">

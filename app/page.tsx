@@ -1,21 +1,20 @@
-import Image from "next/image";
 import Nav from "./components/nav";
-import Landing from"./components/landing";
+import Landing from "./landing/page";
+import Features from "./components/Features";
+import Statistics from "./components/Statistics";
+import Statistics_cont from "./components/Statistics_continued";
+import Review from "./components/Review";
 import "./globals.css";
-import Features from"./components/features";
-import Statistics from"./components/statistics"
-import Statistics_cont from "./components/statistics_continued";
-import Review from "./components/Review"
-import Footer from "./components/Footer"
-import Summarist from"./components/summarist"
-import Login from "./components/Login"
-import BookDetails from "./components/BookDetails"
-import For_you from "./components/For_you";
-import Plan from "./components/plan"
+
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-     <Plan/>
+    <div>
+      <Nav />
+      <Landing />
+      <Features />
+      <Statistics />
+      <Statistics_cont />
+      <Review />
     </div>
   );
 }
