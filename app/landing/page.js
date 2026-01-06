@@ -24,22 +24,12 @@ function Modal({ children, onClose }) {
   return createPortal(
     <div
       className="modal__overlay"
-      onClick={onClose}
       style={{
-     position: "fixed",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    background: "rgba(0, 0, 0,0.75)", // semi-transparent black
-    backdropFilter: "blur(4px)",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    zIndex: 9999,
-    opacity:0.8, // fully visible
-      
+        position: "fixed",
+        inset: 0,
+        zIndex: 998,
       }}
+      onClick={onClose} // click outside closes
     >
       <div onClick={(e) => e.stopPropagation()}>{children}</div>
     </div>,
@@ -66,7 +56,6 @@ function Landing({ setShowLogin }) {
                 <br className="Removie__tablate" />
                 and even people who don’t like to read.
               </div>
-
               <button
                 className={`${landing_styles.btn} ${landing_styles.home__cta__btn}`}
                 onClick={() => setShowLogin(true)}
@@ -74,7 +63,6 @@ function Landing({ setShowLogin }) {
                 Login
               </button>
             </div>
-
             <figure className={landing_styles.landing__img__wrapper}>
               <img
                 src="landing.png"
@@ -96,7 +84,11 @@ export default function LandingWithLoginModal() {
   return (
     <>
       <Landing setShowLogin={setShowLogin} />
-      {showLogin && <Modal onClose={() => setShowLogin(false)}><Login /></Modal>}
+      {showLogin && (
+        <Modal onClose={() => setShowLogin(false)}>
+          <Login onClose={() => setShowLogin(false)} />
+        </Modal>
+      )}
     </>
   );
 }

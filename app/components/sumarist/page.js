@@ -2,11 +2,10 @@
  import { AiFillStar, AiOutlineStarHalf } from "react-icons/ai";
  import { FaStarHalfAlt } from "react-icons/fa";
  import summarist_styles from "./summarist.module.css"
-
-import { AiOutlineBook } from "react-icons/ai";
-import { AiFillBook } from "react-icons/ai";
-import IconBookmark from "../components/book_icon"
-import IconChatQuate from"../components/IconChatQuote"
+ import { AiOutlineBook } from "react-icons/ai";
+ import { AiFillBook } from "react-icons/ai";
+ import IconBookmark from "../book_icon"
+ import IconChatQuate from"../IconChatQuote"
 
     
 export default function Summarist(){
