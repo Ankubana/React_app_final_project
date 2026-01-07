@@ -2,84 +2,86 @@
 
 import for_you_styles from "./for_you.module.css";
 import Link from "next/link";
-import Image from "next/image";
-import { AiFillHome } from "react-icons/ai";
-import { AiFillBook } from "react-icons/ai";
-import { FiEdit } from "react-icons/fi"; 
-import { AiOutlineSearch } from "react-icons/ai";
-import { FiSettings } from "react-icons/fi";
-import { FiHelpCircle } from "react-icons/fi";
-import { FiLogOut } from "react-icons/fi";
+import { HomeIcon, BookmarkIcon,ArrowRightOnRectangleIcon,
+  PencilIcon,QuestionMarkCircleIcon,MagnifyingGlassIcon,  Cog6ToothIcon } from '@heroicons/react/24/outline';
 import Nav from "../components/nav";
 export default function Landing() {
   return (
-    <>
-      {/* LANDING */}
-      
-      {/* SIDEBAR OVERLAY */}
-      <div className={`${for_you_styles.sidebar__overla}${for_you_styles.sidebar__overlay__hidden}`}/>
-      {/* SIDEBAR */}
-      <aside className={`${for_you_styles.sidebar}${for_you_styles.sidebar__closed}`}>
-        <Nav/>
-        <div className={for_you_styles.sidebar__logo}>
-          <Image
-            src="/logo.png"
-            alt="Logo"
-            width={180}
-            height={45}
-           className="logo"/>
-        </div>
-        <div className={for_you_styles.sidebar__wrapper}>
-          <div className={for_you_styles.sidebar__top}>
-            <Link className={for_you_styles.sidebar__link__wrapper} href="/for-you">
-              <div className={`${for_you_styles.sidebar__link__line}${for_you_styles.active__tab }`} />
-              <div className={for_you_styles.sidebar__link__icon}><AiFillHome size={32}/></div>
-              <div className={for_you_styles.sidebar__link__text}>For you</div>
-            </Link>
-
-            <Link className={for_you_styles.sidebar__link__wrapper} href="/library">
-              <div className={for_you_styles.sidebar__link__line} />
-              <div className={for_you_styles.sidebar__link__icon}><AiFillBook size={32} /></div>
-              <div className={for_you_styles.sidebar__link__text}>My Library</div>
-            </Link>
-
-            <div className={for_you_styles.sidebar__link__wrapper}>
-                <div className={for_you_styles.sidebar__link__line} />
-                <div className={for_you_styles.sidebar__link__icon}><FiEdit size={32}/></div>
-              
-              <div className={for_you_styles.sidebar__link__text}>Highlights</div>
-            </div>
-             <div className={for_you_styles.sidebar__link__wrapper}>
-                <div className={for_you_styles.sidebar__link__line} />
-                <div className={for_you_styles.sidebar__link__icon}><AiOutlineSearch size={32}/></div>
-              <div className={for_you_styles.sidebar__link__text}>Search</div>
-            </div>
-             
-          </div>
-          <div className={for_you_styles.sidebar__bottom}>
-            <Link className={for_you_styles.sidebar__link__wrapper} href="/settings">
-            <div className={for_you_styles.sidebar__link__wrapper}>
-                <div className={for_you_styles.sidebar__link__line} />
-                <div className={for_you_styles.sidebar__link__icon}><FiSettings size={32}/></div>
-              <div className={for_you_styles.sidebar__link__text}>settings</div>
-            </div>
-            </Link>
-
-           <div className={for_you_styles.sidebar__link__wrapper}>
-                <div className={for_you_styles.sidebar__link__line} />
-                <div className={for_you_styles.sidebar__link__icon}><FiHelpCircle size={32}/></div>
-              
-              <div className={for_you_styles.sidebar__link__text}>help & support</div>
-            </div>
-
-             <div className={for_you_styles.sidebar__link__wrapper}>
-                <div className={for_you_styles.sidebar__link__line} />
-                <div className={for_you_styles.sidebar__link__icon}><FiLogOut size={32}/></div>
-              <div className={for_you_styles.sidebar__link__text}>logout</div>
-            </div>
-          </div>
-        </div>
-      </aside>
-    </>
-  );
+   <div id="__next">
+    <div className={for_you_styles.wrapper}>
+    <div className={for_you_styles.search__background}>
+    <div className={for_you_styles.search__wrapper}>
+    <figure><img src="logo" alt=""/>
+    </figure><div className={for_you_styles.search__content}>
+    <div className={for_you_styles.search}>
+    <div className={for_you_styles.search__input__wrapper}>
+    <input className={for_you_styles.search__input} placeholder="Search for books" type="text" />
+    <div className={for_you_styles.search__icon}>
+      <MagnifyingGlassIcon />
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+     <div className={`${for_you_styles.sidebar__overla} ${for_you_styles.sidebar__overlay__hidden}`}/>
+    </div> 
+     <div className={`${for_you_styles.sidebar} ${for_you_styles.sidebar__closed}`}>
+    <div className={for_you_styles.sidebar__logo}>
+      <img src="/logo.png" alt="Logo"  className={for_you_styles.logo}/>
+     </div>
+    <div className={for_you_styles.sidebar__wrapper}>
+    <div className={for_you_styles.sidebar__top}>
+    <a className={for_you_styles.sidebar__link__wrapper} href="/for-you">
+    <div className={`${for_you_styles.sidebar__link_line} ${for_you_styles.active__tab}`}>
+    </div>
+    <div className={for_you_styles.sidebar__icon__wrapper}>
+      <HomeIcon/>
+    </div>
+    <div className={for_you_styles.sidebar__link__text}>For you</div>
+    </a><a className={for_you_styles.sidebar__link__wrapper} href="/library">
+    <div className={for_you_styles.sidebar__link_line}>
+    </div>
+    <div className={for_you_styles.sidebar__icon__wrapper}>
+     <BookmarkIcon/>
+    </div>
+    <div className={for_you_styles.sidebar__link__text}>My Library</div>
+    </a>
+    <div className={`${for_you_styles.sidebar__link__wrapper} ${for_you_styles.sidebar__link__not_allowed}`}>
+    <div className={for_you_styles.sidebar__link_line}>
+    </div><div className={for_you_styles.sidebar__icon__wrapper}>
+    <PencilIcon/>
+    </div>
+    <div className={for_you_styles.sidebar__link__text}>Highlights</div></div>
+    <div className={`${for_you_styles.sidebar__link__wrapper} ${for_you_styles.sidebar__link__not_allowed}`}>
+    <div className={for_you_styles.sidebar__link_line}>
+    </div><div className={for_you_styles.sidebar__icon__wrapper}>
+     <MagnifyingGlassIcon/>
+    </div>
+    <div className={for_you_styles.sidebar__link__text}>Search</div>
+    </div></div><div className={for_you_styles.for_you_stylessidebar__bottom}>
+    <a className={for_you_styles.sidebar__link__wrapper} href="/settings">
+    <div className={for_you_styles.sidebar__link_line}></div>
+    <div className={for_you_styles.sidebar__icon__wrapper}>
+        < Cog6ToothIcon/>
+    </div><div className={for_you_styles.sidebar__link__text}>Settings</div>
+      </a><div className={`${for_you_styles.sidebar__link__wrapper} ${for_you_styles.sidebar__link__not_allowed}`}>
+      <div className={for_you_styles.sidebar__link_line}>
+      </div><div className={for_you_styles.sidebar__icon__wrapper}>
+      < QuestionMarkCircleIcon/>
+      </div>
+      <div className={for_you_styles.sidebar__link__text}>Help &amp; Support</div>
+      </div>
+      <div className={for_you_styles.sidebar__link__wrapper}>
+      <div className={for_you_styles.sidebar__link__line}></div>
+      <div className={for_you_styles.sidebar__icon__wrapper}>
+      < ArrowRightOnRectangleIcon/>
+      </div>
+      <div className={for_you_styles.sidebar__link__text}>Logout</div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      )
 }
