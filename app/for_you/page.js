@@ -12,12 +12,13 @@ export default function Landing() {
     <div className={for_you_styles.search__background}>
     <div className={for_you_styles.search__wrapper}>
     <figure><img src="logo" alt=""/>
-    </figure><div className={for_you_styles.search__content}>
+    </figure>
+   <div className={for_you_styles.search__content}>
     <div className={for_you_styles.search}>
     <div className={for_you_styles.search__input__wrapper}>
     <input className={for_you_styles.search__input} placeholder="Search for books" type="text" />
     <div className={for_you_styles.search__icon}>
-      <MagnifyingGlassIcon />
+      <MagnifyingGlassIcon/>
     </div>
     </div>
     </div>
