@@ -5,13 +5,9 @@ import Link from "next/link";
 import { HomeIcon, BookmarkIcon,ArrowRightOnRectangleIcon,
   PencilIcon,QuestionMarkCircleIcon,MagnifyingGlassIcon,  Cog6ToothIcon } from '@heroicons/react/24/outline';
 import Nav from "../components/nav";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
 export default function Landing() {
-const [activeTab, setActiveTab] = useState("");
-   const forYou=()=>{
- 
-      setActiveTab("/for-you")
-   }
+    const pathname = usePathname(); 
   return (
    <div id="__next">
     <div className={for_you_styles.wrapper}>
@@ -40,7 +36,7 @@ const [activeTab, setActiveTab] = useState("");
     <div className={for_you_styles.sidebar__wrapper}>
     <div className={for_you_styles.sidebar__top}>
     <a className={for_you_styles.sidebar__link__wrapper} href="/for-you">
-    <div className={`${for_you_styles.sidebar__link_line} ${activeTab === "/for-you" ? for_you_styles.active__tab : ""}`}onClick={forYou}>
+    <div className={`${for_you_styles.sidebar__link_line} ${pathname === "/for-you" ? for_you_styles.active__tab : ""}`}>
     </div>                                                                                                                                  
     <div className={for_you_styles.sidebar__icon__wrapper}>
       <HomeIcon/>
@@ -48,7 +44,7 @@ const [activeTab, setActiveTab] = useState("");
     <div className={for_you_styles.sidebar__link__text}>For you</div>
     </a><a className={for_you_styles.sidebar__link__wrapper} href="/library">
      <div className={`${for_you_styles.sidebar__link_line} ${
-      activeTab === "/for-you" ? for_you_styles.active__tab : ""}`}>
+      pathname === "/library" ? for_you_styles.active__tab : ""}`}>
     </div>
     <div className={for_you_styles.sidebar__icon__wrapper}>
      <BookmarkIcon/>
