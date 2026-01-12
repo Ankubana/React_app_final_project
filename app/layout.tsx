@@ -9,7 +9,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-    <Sidebar/>  
+   
   <body> 
 
  <main className="main">

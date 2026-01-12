@@ -537,3 +537,10 @@ ease 0s;
     text-decoration: none;
 
 }
+.book__image__wrapper{
+  width: 172px;
+    height: 172px;
+    height: 140px; 
+    width: 140px;
+    min-width: 140px;
+}
