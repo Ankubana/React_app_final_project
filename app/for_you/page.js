@@ -2,15 +2,29 @@
 
 import for_you_styles from "./for_you.module.css";
 import Link from "next/link";
+import axios from "axios";
+import { useEffect,useState } from "react";
 import { HomeIcon, BookmarkIcon,ArrowRightOnRectangleIcon,
   PencilIcon,QuestionMarkCircleIcon,MagnifyingGlassIcon,  Cog6ToothIcon } from '@heroicons/react/24/outline';
 import Nav from "../components/nav";
 import { usePathname } from "next/navigation";
 export default function Landing() {
-const pathname = usePathname(); 
- 
-  
-
+  const pathname = usePathname(); 
+  const [books,setBooks]=useState([]);
+     useEffect(() => {
+  async function fetchBooks() {
+  try {
+      const {data} = await axios.get(
+        "https://us-central1-summaristt.cloudfunctions.net/getBooks?status=selected"
+      );
+      setBooks(data);
+      console.log(data);
+     } catch (error) {
+      console.error("Error fetching books:", error);
+     } 
+  }
+  fetchBooks();
+}, []);
   return (
     <div className={for_you_styles.wrapper}>
     <div className={for_you_styles.search__background}>
@@ -91,6 +105,7 @@ const pathname = usePathname();
       < div  className={for_you_styles.row}>
       < div  className={for_you_styles.container}>
        < div className={for_you_styles.for_you__wrapper}>
+       < div className={for_you_styles.for__you__title }>Selected just for you</div>
        <a className={for_you_styles.selected__book} href="/book/f9gy1gpai8">
        <div className={for_you_styles.selected__book__sub_title}>How Constant Innovation Creates Radically Successful Businesses</div>
        <div className={for_you_styles.selected__book__line}></div>
@@ -102,14 +117,16 @@ const pathname = usePathname();
         <div className={for_you_styles.selected__book__title}>The Lean Startup</div>
         <div className={for_you_styles.selected__book__author}>Eric Ries</div>
         <div className={for_you_styles.selected__book__duration_wrapper}>
-        <div className={for_you_styles.selected__book__icon}>
-        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em"
-         xmlns="http://www.w3.org/2000/svg">
-          <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 
-         1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z">
-         </path>
-         </svg>
-         </div>
+        <figure className={for_you_styles.selected__book__icon}>
+           {
+            books.map((userData)=>(
+              <>
+            <img src={userData.imageLink} ClassName={for_you_styles.book__img}> 
+            </img>
+             </>
+             ))
+           }
+         </figure>
         <div className={for_you_styles.selected__book__duration}>3 mins 23 secs</div>
         </div>
         </div>

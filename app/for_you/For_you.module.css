@@ -540,7 +540,21 @@ ease 0s;
 .book__image__wrapper{
   width: 172px;
     height: 172px;
-    height: 140px; 
+    
+}
+.for__you__title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #032b41;
+    /* margin-bottom: 16px; */
+} 
+.selected__book__icon{
+height: 140px; 
     width: 140px;
     min-width: 140px;
+
+}
+.book__img{
+    width:100%;
+    height:100%;
 }
