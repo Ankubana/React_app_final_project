@@ -8,6 +8,7 @@ import { HomeIcon, BookmarkIcon,ArrowRightOnRectangleIcon,
   PencilIcon,QuestionMarkCircleIcon,MagnifyingGlassIcon,  Cog6ToothIcon } from '@heroicons/react/24/outline';
 import Nav from "../components/nav";
 import { usePathname } from "next/navigation";
+import { FaPlay, FaPause, FaVolumeUp } from "react-icons/fa";
 export default function Landing() {
   const pathname = usePathname(); 
   const [books,setBooks]=useState([]);
@@ -110,24 +111,27 @@ export default function Landing() {
        <div className={for_you_styles.selected__book__sub_title}>How Constant Innovation Creates Radically Successful Businesses</div>
        <div className={for_you_styles.selected__book__line}></div>
        <div className={for_you_styles.selected__book__content}>
-        <figure className={for_you_styles.book__image__wrapper}>
-
-        </figure>
-        <div className={for_you_styles.selected__book__text}>
-        <div className={for_you_styles.selected__book__title}>The Lean Startup</div>
-        <div className={for_you_styles.selected__book__author}>Eric Ries</div>
-        <div className={for_you_styles.selected__book__duration_wrapper}>
         <figure className={for_you_styles.selected__book__icon}>
-           {
+ {
             books.map((userData)=>(
               <>
-            <img src={userData.imageLink} ClassName={for_you_styles.book__img}> 
+            <img src={userData.imageLink} className={for_you_styles.book__img}> 
             </img>
              </>
              ))
            }
          </figure>
-        <div className={for_you_styles.selected__book__duration}>3 mins 23 secs</div>
+        
+        <div className={for_you_styles.selected__book__text}>
+        <div className={for_you_styles.selected__book__title}>The Lean Startup</div>
+        <div className={for_you_styles.selected__book__author}>Eric Ries</div>
+        <div className={for_you_styles.selected__book__duration_wrapper}>
+         <div className= {for_you_styles.audio}>
+            <FaPlay/>
+            <div className={for_you_styles.selected__book__duration}>3 mins 23 secs</div>
+          </div>
+        
+      
         </div>
         </div>
         </div>
