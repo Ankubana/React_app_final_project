@@ -12,7 +12,7 @@ import { FaPlay, FaPause, FaVolumeUp } from "react-icons/fa";
 export default function Landing() {
   const pathname = usePathname(); 
   const [books,setBooks]=useState([]);
-     useEffect(() => {
+  useEffect(() => {
   async function fetchBooks() {
   try {
       const {data} = await axios.get(
@@ -20,12 +20,12 @@ export default function Landing() {
       );
       setBooks(data);
       console.log(data);
-     } catch (error) {
+      } catch (error) {
       console.error("Error fetching books:", error);
-     } 
-  }
+       } 
+       }
   fetchBooks();
-}, []);
+    }, []);
   return (
     <div className={for_you_styles.wrapper}>
     <div className={for_you_styles.search__background}>
@@ -112,26 +112,24 @@ export default function Landing() {
        <div className={for_you_styles.selected__book__line}></div>
        <div className={for_you_styles.selected__book__content}>
         <figure className={for_you_styles.selected__book__icon}>
- {
-            books.map((userData)=>(
-              <>
+           {
+         books.map((userData)=>(
+             <>
             <img src={userData.imageLink} className={for_you_styles.book__img}> 
             </img>
              </>
              ))
-           }
+         }
          </figure>
-        
         <div className={for_you_styles.selected__book__text}>
         <div className={for_you_styles.selected__book__title}>The Lean Startup</div>
         <div className={for_you_styles.selected__book__author}>Eric Ries</div>
         <div className={for_you_styles.selected__book__duration_wrapper}>
          <div className= {for_you_styles.audio}>
             <FaPlay/>
-            <div className={for_you_styles.selected__book__duration}>3 mins 23 secs</div>
-          </div>
-        
-      
+            </div>
+             <div className={for_you_styles.selected__book__duration}>3 mins 23 secs</div>
+  
         </div>
         </div>
         </div>

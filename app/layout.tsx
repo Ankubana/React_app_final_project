@@ -10,7 +10,10 @@ export default function RootLayout({
   return (
     <html lang="en">
   <body> 
-<Sidebar/>
+{
+ <Sidebar/>
+}
+
  <main className="main">
          
           {children}
