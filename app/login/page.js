@@ -4,7 +4,7 @@ import { FaUser, FaGoogle, FaTimes } from "react-icons/fa";
 import { useState } from "react";
 import { auth } from "../firebase/page";
 import { useRouter } from "next/navigation";
-import {
+import { 
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   sendPasswordResetEmail,
@@ -13,7 +13,7 @@ import {
   signInAnonymously,
 } from "firebase/auth";
 import login_styles from "./Login.module.css";
-
+import Layout from "../layout";
 export default function Login({ onClose }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -22,18 +22,16 @@ export default function Login({ onClose }) {
   const [signup, setSignup] = useState(false);
    const[restPassword,setRestPassword]=useState(false)
   const [lebal, setLebal] = useState("Reset your password");
-
   /* 🔐 EMAIL LOGIN */
   const login = () => {
-    if (!email||!password) {
+    if (!email||!password){
       setLoginMessage("Please enter email and password");
       return;
-    }
-
+    } 
     signInWithEmailAndPassword(auth, email, password)
       .then(() => setLoginMessage(""))
       .catch((error) => setLoginMessage(error.message));
-  };
+    };
 
   /* 📝 REGISTER */
   const register = () => {
@@ -198,9 +196,12 @@ export default function Login({ onClose }) {
                 </>
                 )}
                 {isLogin &&(
+                  <>
                   <button className={login_styles.btn} onClick={login}>
                     Login
                   </button>
+                   <Layout login={isLogin}/>
+                   </>
                 ) } {signup &&(
                   <button className={login_styles.btn} onClick={
                     ()=>{setIsLogin(!isLogin)

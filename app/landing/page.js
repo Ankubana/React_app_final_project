@@ -88,6 +88,7 @@ export default function LandingWithLoginModal() {
         <Modal onClose={() => setShowLogin(false)}>
           <Login onClose={() => setShowLogin(false)} />
         </Modal>
+         
       )}
     </>
   );

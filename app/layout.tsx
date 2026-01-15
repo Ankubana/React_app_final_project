@@ -1,17 +1,23 @@
+"use client"
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Nav from "./components/nav";
 import Sidebar from"./for_you/page";
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+import { useEffect,useState } from "react";
+export default function RootLayout({ children }: { children: React.ReactNode },login) {
+  const [refreshBooks, setRefreshBooks] = useState(false);
+    
+   function upadteSideBar(){
+     
+   }
+
   return (
     <html lang="en">
   <body> 
 {
+  refreshBooks&&(
  <Sidebar/>
+  )
 }
 
  <main className="main">
