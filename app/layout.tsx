@@ -6,9 +6,7 @@ import Sidebar from"./for_you/page";
 import { useEffect,useState } from "react";
 export default function RootLayout({ children }: { children: React.ReactNode },login) {
   const [refreshBooks, setRefreshBooks] = useState(false);
-    
    function upadteSideBar(){
-     
    }
 
   return (
