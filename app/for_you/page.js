@@ -93,7 +93,7 @@ export default function Landing() {
                 >
                   <div
                     className={`${for_you_styles.sidebar__link_line} ${
-                      pathname === "/library" ? for_you_styles.active__tab : ""
+                      pathname === "/for-you" ? for_you_styles.active__tab : ""
                     }`}
                   ></div>
                   <div className={for_you_styles.sidebar__icon__wrapper}>
