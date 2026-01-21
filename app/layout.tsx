@@ -12,11 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode },l
   return (
     <html lang="en">
   <body> 
-{
-  refreshBooks&&(
- <Sidebar/>
-  )
-}
+
 
  <main className="main">
          

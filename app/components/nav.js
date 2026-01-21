@@ -7,11 +7,7 @@ export default function Nav() {
     <nav className={styles.nav}>
       <div className={styles.nav__wrapper}>
         <figure className={styles.nav__img__mask}>
-          <img
-            src="logo.png"
-            alt="Logo"
-            className={styles.nav__img}
-          />
+    
         </figure>
 
         <ul className={styles.nav__list__wrapper}>

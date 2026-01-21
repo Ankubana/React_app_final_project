@@ -89,6 +89,7 @@ export default function Login({ onClose }) {
   };
    const Rawouter=useRouter()
   return (
+    
     <div id="__next">
       <div className={`${login_styles.wrapper} ${login_styles.wrapper__full}`}>
         <div
@@ -104,7 +105,6 @@ export default function Login({ onClose }) {
             <button className={login_styles.close__btn} onClick={onClose}>
               <FaTimes size="30" />
             </button>
-
             <div className={login_styles.auth__content}>
               <div className={login_styles.auth__title}>
                 {isLogin ? "Log in to Summarist" :lebal}
@@ -192,7 +192,6 @@ export default function Login({ onClose }) {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
-                
                 </>
                 )}
                 {isLogin &&(
