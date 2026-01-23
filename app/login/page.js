@@ -56,7 +56,7 @@ export default function Login({ onClose }) {
       setLoginMessage("Please enter your email first");
       return;
     }
- vxzx 
+ 
     sendPasswordResetEmail(auth, email)
       .then(() => setLoginMessage("Password reset email sent 📧"))
       .catch((error) => setLoginMessage(error.message));
