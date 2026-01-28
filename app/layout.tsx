@@ -10,12 +10,14 @@ export default function RootLayout({ children }: { children: React.ReactNode },l
    }
 
   return (
-  
+  <html>
   <body> 
+  <Sidebar/>
  <main className="main">
           {children}
  </main>
+ 
  </body>
-  
+  </html>
   );
 }

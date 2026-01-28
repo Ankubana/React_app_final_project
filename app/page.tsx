@@ -12,12 +12,12 @@ import "./globals.css";
 export default function Home() {
   return (
     <div>
-       <Nav />
-      <Landing />
-      <Features />
-      <Statistics />
-      <Statistics_cont />
-      <Review />
+       <Nav/>
+      <Landing/>
+      <Features/>
+      <Statistics/>
+      <Statistics_cont/>
+      <Review/>
     </div>
      );
 }

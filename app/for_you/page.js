@@ -1,6 +1,6 @@
 "use client";
 
-import for_you_styles from "./for_you.module.css";
+import for_you_styles from "./For_you.module.css";
 import Link from "next/link";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -193,11 +193,13 @@ export default function Landing() {
                       <div
                         className={for_you_styles.selected__book__duration_wrapper}
                       >
+                        <div className={for_you_styles.audio_wrapper}>
                         <div className={for_you_styles.audio}>
                           <FaPlay />
                         </div>
                         <div className={for_you_styles.selected__book__duration}>
                           3 mins 23 secs
+                        </div>
                         </div>
                       </div>
                     </div>

@@ -151,9 +151,9 @@
 }
 .selected__book__content {
     display: flex;
-    gap: 30px;
-    width: 90%;
-    outline:none;
+    width:80%;
+    
+    
 }
 
 .selected__book__author {
@@ -530,6 +530,8 @@ ease 0s;
     color: #032b41;
     width: 100%;
     text-decoration: none;
+    font-weight:700;
+    
 
 }
 .book__image__wrapper{
@@ -547,20 +549,38 @@ ease 0s;
 height: 140px; 
     width:140px;
     min-width:140px;
-margin-left:1px;
+    
 }
 .book__img{
     width:100%;
     height:100%;
 }
+.selected__book__duration{
+  color: #000;
+ text-decoration:none;
+font-weight:bold;
+ text-align:center;
+ margin:auto;
+ margin-left:5px;
+ 
+}
 .audio{
 display:flex;
-width:50px;
-height:50px;
+width:40px;
+height:40px;
 border-radius:50%;
 justify-content:center;
 background-color:black;
 color:white;
 align-items:center;
 border:1px solid white;
+margin-left:1px;
+}
+.audio_wrapper{
+    display:flex;
+    width:200px;
+    justify-content:start;
+    justify-items:center;
+
+    
 }
