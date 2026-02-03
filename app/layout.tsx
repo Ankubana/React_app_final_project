@@ -12,7 +12,10 @@ export default function RootLayout({ children }: { children: React.ReactNode },l
   return (
   <html>
   <body> 
+{refreshBooks&&(
   <Sidebar/>
+)
+}
  <main className="main">
           {children}
  </main>

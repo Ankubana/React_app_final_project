@@ -82,7 +82,7 @@ export default function Landing() {
                     }`}
                   ></div>
                   <div className={for_you_styles.sidebar__icon__wrapper}>
-                    <HomeIcon />
+                    <HomeIcon/>
                   </div>
                   <div className={for_you_styles.sidebar__link__text}>For you</div>
                 </Link>
