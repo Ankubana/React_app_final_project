@@ -16,6 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode },l
   <Sidebar/>
 )
 }
+
  <main className="main">
           {children}
  </main>

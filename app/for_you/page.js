@@ -74,11 +74,11 @@ export default function Landing() {
               <div className={for_you_styles.sidebar__top}>
                 <Link
                   className={for_you_styles.sidebar__link__wrapper}
-                  href="/for-you"
+                  href="/for_you"
                 >
                   <div
                     className={`${for_you_styles.sidebar__link_line} ${
-                      pathname === "/for-you" ? for_you_styles.active__tab : ""
+                      pathname === "/for_you" ? for_you_styles.active__tab : ""
                     }`}
                   ></div>
                   <div className={for_you_styles.sidebar__icon__wrapper}>
@@ -93,7 +93,7 @@ export default function Landing() {
                 >
                   <div
                     className={`${for_you_styles.sidebar__link_line} ${
-                      pathname === "/for-you" ? for_you_styles.active__tab : ""
+                      pathname === "/for_you" ? for_you_styles.active__tab : ""
                     }`}
                   ></div>
                   <div className={for_you_styles.sidebar__icon__wrapper}>
