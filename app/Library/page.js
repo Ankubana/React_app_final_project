@@ -1,9 +1,8 @@
 "use client";
+import Link from "next/link";
 
 import for_you_styles from "./For_you.module.css";
-import Link from "next/link";
-import axios from "axios"; 
-import Library from"../Library/page.js"
+import axios from "axios";
 import { useEffect, useState } from "react";
 import {
   HomeIcon,
@@ -101,7 +100,7 @@ export default function Landing() {
                     <BookmarkIcon />
                   </div>
                   <div className={for_you_styles.sidebar__link__text}>My Library</div>
-                    </Link>
+                </Link>
 
                 <div
                   className={`${for_you_styles.sidebar__link__wrapper} ${for_you_styles.sidebar__link__not_allowed}`}
