@@ -10,7 +10,7 @@ export default function RootLayout({ children }: { children: React.ReactNode },l
    }
 
   return (
-  <html>
+
   <body> 
 {refreshBooks&&(
   <Sidebar/>
@@ -22,6 +22,5 @@ export default function RootLayout({ children }: { children: React.ReactNode },l
  </main>
  
  </body>
-  </html>
   );
 }
