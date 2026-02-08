@@ -26,7 +26,7 @@ export default function Landing() {
     async function fetchBooks() {
       try {
         const { data } = await axios.get(
-          "https://us-central1-summaristt.cloudfunctions.net/getBooks?status=selected"
+          "https://us-central1-summaristt.cloudfunctions.net/getBooks?status=recommended"
         );
         setBooks(data);
         console.log(data);
@@ -34,10 +34,10 @@ export default function Landing() {
         console.error("Error fetching books:", error);
       }
       setOpen(true)
-    }
+      }
     fetchBooks();
   }, []);
-
+  console.log(books)
   return (
     <>
       {open && (
@@ -203,9 +203,23 @@ export default function Landing() {
                         </div>
                         </div>
                       </div>
+                      
                     </div>
                   </div>
                 </a>
+                {
+                      books.map((book)=>
+                        
+                        <img
+                        
+                        src={book.imageLink}
+
+          
+                        />
+                        
+                        )
+                       
+                      }
               </div>
             </div>
           </div>

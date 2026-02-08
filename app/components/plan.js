@@ -47,7 +47,6 @@ export default function PlanFeatures() {
       <div
         className={`${Plan_styles.sidebar__overlay} ${Plan_styles.sidebar__overlay__hidden}`}
       ></div>
-
       <div className={Plan_styles.plan}>
         <div className={Plan_styles.plan__header__wrapper}>
           <div className={Plan_styles.plan__header}>
