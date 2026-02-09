@@ -580,7 +580,15 @@ margin-left:1px;
     display:flex;
     width:200px;
     justify-content:start;
-    justify-items:center;
-
-    
+    justify-items:center;   
+}
+.card {
+  width:100px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+}
+.card img {
+  width:10%;
+  height:100px;
 }

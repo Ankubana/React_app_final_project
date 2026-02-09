@@ -20,16 +20,23 @@ import { FaPlay } from "react-icons/fa";
 export default function Landing() {
   const pathname = usePathname();
   const [books, setBooks] = useState([]);
+  onst [books, setBooks] = useState([]);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
     async function fetchBooks() {
       try {
-        const { data } = await axios.get(
+        const { dat } = await axios.get(
           "https://us-central1-summaristt.cloudfunctions.net/getBooks?status=recommended"
         );
         setBooks(data);
         console.log(data);
+          const { data } = await axios.get(
+          "https://us-central1-summaristt.cloudfunctions.net/getBooks?status=recommended"
+        );
+        setBooks(data);
+        console.log(data);
+        
       } catch (error) {
         console.error("Error fetching books:", error);
       }
@@ -209,17 +216,19 @@ export default function Landing() {
                 </a>
                 {
                       books.map((book)=>
-                        
-                        <img
-                        
-                        src={book.imageLink}
-
-          
-                        />
-                        
-                        )
-                       
+                        <div class="card">
+                        <img src={book.imageLink} alt="Card image"/>
+                        <div class="card-content"/>
+                        <h3>Card Title</h3>
+                        <p>This is a simple photo card made with HTML and CSS.</p>
+                        </div>
+                         )
+      
                       }
+
+            
+
+
               </div>
             </div>
           </div>
