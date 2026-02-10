@@ -583,12 +583,18 @@ margin-left:1px;
     justify-items:center;   
 }
 .card {
-  width:100px;
+  width:50px;
+  height:40px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s;
 }
-.card img {
-  width:10%;
-  height:100px;
+.card_img {
+  width:20px;
+  height:200px;
+}
+.imag_warraper{
+    width:100px;
+    height:50px;
+    display:flex;
 }

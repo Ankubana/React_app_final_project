@@ -20,23 +20,22 @@ import { FaPlay } from "react-icons/fa";
 export default function Landing() {
   const pathname = usePathname();
   const [books, setBooks] = useState([]);
-  onst [books, setBooks] = useState([]);
+  const [sumple_book,setBookSumple_book] = useState([]);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
     async function fetchBooks() {
       try {
-        const { dat } = await axios.get(
-          "https://us-central1-summaristt.cloudfunctions.net/getBooks?status=recommended"
+        const { data } = await axios.get(
+          "https://us-central1-summaristt.cloudfunctions.net/getBooks?status=selected"
         );
         setBooks(data);
-        console.log(data);
-          const { data } = await axios.get(
+  
+          const recommendedRes = await axios.get(
           "https://us-central1-summaristt.cloudfunctions.net/getBooks?status=recommended"
         );
-        setBooks(data);
-        console.log(data);
-        
+        setBookSumple_book(recommendedRes.data);
+         console.log(recommendedRes);
       } catch (error) {
         console.error("Error fetching books:", error);
       }
@@ -215,12 +214,14 @@ export default function Landing() {
                   </div>
                 </a>
                 {
-                      books.map((book)=>
-                        <div class="card">
-                        <img src={book.imageLink} alt="Card image"/>
-                        <div class="card-content"/>
+                      sumple_book.map((book)=>
+                         <div className="imag_warraper">
+                        <div className={for_you_styles.Card_image}>
+                        <img src={book.imageLink} className={for_you_styles.Card_image}alt="Card image"/>
+                        <div className="card-content"/>
                         <h3>Card Title</h3>
                         <p>This is a simple photo card made with HTML and CSS.</p>
+                        </div>
                         </div>
                          )
       
