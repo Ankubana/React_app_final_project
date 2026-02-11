@@ -213,26 +213,33 @@ export default function Landing() {
                     </div>
                   </div>
                 </a>
-                {
-                      sumple_book.map((book)=>
-                         <div className="imag_warraper">
-                        <div className={for_you_styles.Card_image}>
-                        <img src={book.imageLink} className={for_you_styles.Card_image}alt="Card image"/>
-                        <div className="card-content"/>
-                        <h3>Card Title</h3>
-                        <p>This is a simple photo card made with HTML and CSS.</p>
-                        </div>
-                        </div>
-                         )
-      
-                      }
-
+                
             
 
 
               </div>
             </div>
           </div>
+          {
+  sumple_book.map((book, index) => (
+    <div className={for_you_styles.image_wrapper} key={index}>
+      <div className={for_you_styles.Card}>
+        <img 
+          src={book.imageLink} 
+          alt={book.title} 
+          className={for_you_styles.Card_image} 
+        />
+
+        <div className={for_you_styles.card_content}>
+          <h3>{book.title}</h3>
+          <p>{book.description}</p>
+        </div>
+
+      </div>
+    </div>
+  ))
+}
+
         </div>
       )}
     </>
