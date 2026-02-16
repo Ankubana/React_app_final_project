@@ -220,7 +220,9 @@ export default function Landing() {
               </div>
             </div>
           </div>
+    <div className={for_you_styles.container}>
           {
+              
   sumple_book.map((book, index) => (
     <div className={for_you_styles.image_wrapper} key={index}>
       <div className={for_you_styles.Card}>
@@ -237,8 +239,10 @@ export default function Landing() {
 
       </div>
     </div>
+    
   ))
 }
+</div>
 
         </div>
       )}

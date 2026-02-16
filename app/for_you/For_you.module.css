@@ -599,6 +599,7 @@ margin-left:1px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+
 }
 
 .Card:hover {
@@ -629,6 +630,13 @@ margin-left:1px;
   color: #777;
   line-height: 1.4;
 }
-.image_wrapper{
- display:flex;
+.image_wrapper {
+  display:flex;
+  margin: 20px 0;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }
