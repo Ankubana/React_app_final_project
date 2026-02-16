@@ -231,12 +231,14 @@ export default function Landing() {
           alt={book.title} 
           className={for_you_styles.Card_image} 
         />
-
         <div className={for_you_styles.card_content}>
           <h3>{book.title}</h3>
-          <p>{book.description}</p>
-        </div>
+          <p>{book.author}</p>
+          <p>{book.subTitle}</p>
+          <p>{book.averageRating}</p>
 
+          
+        </div>
       </div>
     </div>
     
