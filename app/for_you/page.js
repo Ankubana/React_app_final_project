@@ -2,6 +2,7 @@
 
 import for_you_styles from "./For_you.module.css";
 import Link from "next/link";
+import { HiOutlineClock } from "react-icons/hi";
 import axios from "axios"; 
 import Library from"../Library/page.js"
 import { useEffect, useState } from "react";
@@ -235,6 +236,7 @@ export default function Landing() {
           <h3>{book.title}</h3>
           <p>{book.author}</p>
           <p>{book.subTitle}</p>
+          < HiOutlineClock/>
           <p>{book.averageRating}</p>
 
           
