@@ -5,6 +5,8 @@ import Link from "next/link";
 import { HiOutlineClock } from "react-icons/hi";
 import axios from "axios"; 
 import Library from"../Library/page.js"
+import { FaStar } from "react-icons/fa";
+
 import { useEffect, useState } from "react";
 import {
   HomeIcon,
@@ -236,10 +238,12 @@ export default function Landing() {
           <h3>{book.title}</h3>
           <p>{book.author}</p>
           <p>{book.subTitle}</p>
-          < HiOutlineClock/>
-          <p>{book.averageRating}</p>
-
           
+    <p className={for_you_styles.display}>
+      <HiOutlineClock/>
+      <FaStar/>
+      {book.averageRating}
+           </p>
         </div>
       </div>
     </div>
