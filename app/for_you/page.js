@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import {
   HomeIcon,
   BookmarkIcon,
+  ArrowRightOnRectangleIcon,
   PencilIcon,
   QuestionMarkCircleIcon,
   MagnifyingGlassIcon,
@@ -175,8 +176,9 @@ export default function Landing() {
                 </div>
                 <a
                   className={for_you_styles.selected__book}
-                  href="/book/f9gy1gpai8"
+                  href="/BookDetail"
                 >
+                   
                   <div className={for_you_styles.selected__book__sub_title}>
                     How Constant Innovation Creates Radically Successful Businesses
                   </div>
@@ -190,6 +192,7 @@ export default function Landing() {
                           className={for_you_styles.book__img}
                           alt={userData.title || "Book"}
                         />
+                    
                       ))}
                     </figure>
                     <div className={for_you_styles.selected__book__text}>
@@ -209,18 +212,19 @@ export default function Landing() {
                         <div className={for_you_styles.selected__book__duration}>
                           3 mins 23 secs
                         </div>
+                        
                         </div>
                       </div>
                       
                     </div>
+                     
                   </div>
                 </a>
-                
-            
-
 
               </div>
+               
             </div>
+            
           </div>
     <div className={for_you_styles.container}>
           {
