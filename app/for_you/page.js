@@ -11,7 +11,6 @@ import { useEffect, useState } from "react";
 import {
   HomeIcon,
   BookmarkIcon,
-  ArrowRightOnRectangleIcon,
   PencilIcon,
   QuestionMarkCircleIcon,
   MagnifyingGlassIcon,
