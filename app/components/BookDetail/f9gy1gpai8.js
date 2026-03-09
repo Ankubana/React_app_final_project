@@ -1,7 +1,7 @@
 "use client";
 import  style_BookDetails from "./BookDetails.module.css"
 import {   FaLightbulb, FaBook, FaPlay } from "react-icons/fa";
-import { FaRegStar } from "react-icons/fa";
+//import { FaRegStar } from "react-icons/fa";
 import { FaRegClock } from "react-icons/fa";
 import { FaMicrophone } from "react-icons/fa";
 import { AiOutlinePoweroff } from "react-icons/ai";
