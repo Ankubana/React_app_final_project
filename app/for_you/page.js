@@ -2,7 +2,7 @@
 
 import for_you_styles from "./For_you.module.css";
 import Link from "next/link";
-import { HiOutlineClock } from "react-icons/hi";
+//import { HiOutlineClock } from "react-icons/hi";
 import axios from "axios"; 
 import Library from"../Library/page.js"
 import { FaStar } from "react-icons/fa";
