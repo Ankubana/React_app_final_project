@@ -4,7 +4,7 @@ import {   FaLightbulb, FaBook, FaPlay } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
 import { FaRegClock } from "react-icons/fa";
 import { FaMicrophone } from "react-icons/fa";
-import { AiOutlinePoweroff } from "react-icons/ai";
+//import { AiOutlinePoweroff } from "react-icons/ai";
 import { BsBookmark } from "react-icons/bs";
 import { BulbOutlined } from "@ant-design/icons";
 import { HiOutlineLightBulb } from "react-icons/hi2"; 
